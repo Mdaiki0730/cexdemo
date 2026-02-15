@@ -27,4 +27,5 @@ uuid = { version = "1.6", features = ["v4", "serde"] }
 rust_decimal = { version = "1.35", features = ["serde-float"] }
 sea-orm = { version = "0.12", features = ["sqlx-postgres", "runtime-tokio-native-tls", "macros", "with-chrono", "with-uuid", "with-rust_decimal"] }
 sea-orm-migration = { version = "0.12", features = ["sqlx-postgres", "runtime-tokio-native-tls", "macros"] }
+dotenv = "0.15"
 

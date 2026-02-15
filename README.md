@@ -95,7 +95,11 @@ GET /api/order_books/executed?limit=100&offset=0
 
 ## Environment Variables
 
+Environment variables can be configured via a `.env` file in the project root. Copy `.env.example` to `.env` and modify as needed:
+
 - `DATABASE_URL`: PostgreSQL connection string (default: `postgresql://cexuser:cexpass@localhost:5432/cexdb`)
+- `KAFKA_BOOTSTRAP_SERVERS`: Kafka bootstrap servers (default: `localhost:9092`)
+- `SERVER_ADDRESS`: Server bind address (default: `0.0.0.0:3000`)
 
 ## Notes
 
