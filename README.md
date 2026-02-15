@@ -106,6 +106,19 @@ curl 'http://localhost:3000/api/order_books/executed?limit=100&offset=0'
 - Default user ID: `default_user`
 - Supported pairs: `btc_jpy` only
 
+## Future Improvements
+
+- User authentication and authorization
+- Multiple trading pairs support
+- Order cancellation functionality
+- Real-time order book updates (WebSocket)
+- Fee implementation: Taker/Maker fee adjustment
+- Transaction - Order model separation
+- Comprehensive testing (unit, integration, E2E)
+- Monitoring and logging
+- Performance optimization and caching
+- Security enhancements (HTTPS, rate limiting, input validation) 
+
 ## System Architecture
 
 ### Workflow
