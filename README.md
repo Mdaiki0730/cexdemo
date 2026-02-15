@@ -10,6 +10,14 @@ A CEX order trading system MVC implementation, inspired by Coincheck API.
 - **Message Queue**: Apache Kafka
 - **Database**: PostgreSQL
 
+## Environment Variables
+
+Environment variables can be configured via a `.env` file in the project root. Copy `.env.example` to `.env` and modify as needed:
+
+- `DATABASE_URL`: PostgreSQL connection string (default: `postgresql://cexuser:cexpass@localhost:5432/cexdb`)
+- `KAFKA_BOOTSTRAP_SERVERS`: Kafka bootstrap servers (default: `localhost:9092`)
+- `SERVER_ADDRESS`: Server bind address (default: `0.0.0.0:3000`)
+
 ## Setup
 
 ### 1. Start Infrastructure with Docker Compose
@@ -70,36 +78,27 @@ The API Server will start at `http://localhost:3000`.
 ### 1. Create Order
 
 ```bash
-POST /api/exchange/orders
-Content-Type: application/json
-
-{
-  "pair": "btc_jpy",
-  "order_type": "buy",
-  "rate": 5000000,
-  "amount": 0.01
-}
+curl -X POST http://localhost:3000/api/exchange/orders \
+  -H "Content-Type: application/json" \
+  -d '{
+    "pair": "btc_jpy",
+    "order_type": "buy",
+    "rate": 5000000,
+    "amount": 0.01
+  }'
 ```
 
 ### 2. Get Order Book
 
 ```bash
-GET /api/order_books
+curl http://localhost:3000/api/order_books
 ```
 
 ### 3. Get Executed Orders
 
 ```bash
-GET /api/order_books/executed?limit=100&offset=0
+curl 'http://localhost:3000/api/order_books/executed?limit=100&offset=0'
 ```
-
-## Environment Variables
-
-Environment variables can be configured via a `.env` file in the project root. Copy `.env.example` to `.env` and modify as needed:
-
-- `DATABASE_URL`: PostgreSQL connection string (default: `postgresql://cexuser:cexpass@localhost:5432/cexdb`)
-- `KAFKA_BOOTSTRAP_SERVERS`: Kafka bootstrap servers (default: `localhost:9092`)
-- `SERVER_ADDRESS`: Server bind address (default: `0.0.0.0:3000`)
 
 ## Notes
 
