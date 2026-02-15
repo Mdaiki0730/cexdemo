@@ -1,0 +1,23 @@
+[package]
+name = "settlement"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "settlement"
+path = "src/main.rs"
+
+[dependencies]
+shared = { path = "../shared" }
+tokio = { workspace = true }
+rdkafka = { workspace = true }
+sea-orm = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+rust_decimal = { workspace = true }
+dotenv = { workspace = true }
+
