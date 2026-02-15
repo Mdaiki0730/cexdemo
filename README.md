@@ -90,7 +90,7 @@ GET /api/order_books
 ### 3. Get Executed Orders
 
 ```bash
-GET /api/exchange/orders/executed?limit=100&offset=0
+GET /api/order_books/executed?limit=100&offset=0
 ```
 
 ## Environment Variables
